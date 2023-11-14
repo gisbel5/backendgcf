@@ -9,6 +9,7 @@ type User struct {
 	ID           primitive.ObjectID 	`bson:"_id,omitempty" json:"_id,omitempty"`
 	Username string `json:"username" bson:"username"`
 	Password string `json:"password" bson:"password"`
+	// Email		 string             	`bson:"email,omitempty" json:"email,omitempty"`
 }
 
 type Credential struct {

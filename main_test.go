@@ -10,13 +10,13 @@ import (
 )
 
 // func TestUpdateGetData(t *testing.T) {
-// 	mconn := SetConnection("MONGOSTRING", "billblis")
-// 	datagedung := GetAllBangunanLineString(mconn, "billblis")
+// 	mconn := SetConnection("MONGOSTRING", "healhero_db")
+// 	datagedung := GetAllBangunanLineString(mconn, "healhero_db")
 // 	fmt.Println(datagedung)
 // }
 
 func TestGeneratePasswordHash(t *testing.T) {
-	password := "belbel"
+	password := "begitulah"
 	hash, _ := HashPassword(password) // ignore error for the sake of simplicity
 	fmt.Println("Password:", password)
 	fmt.Println("Hash:    ", hash)
@@ -28,15 +28,15 @@ func TestGeneratePrivateKeyPaseto(t *testing.T) {
 	privateKey, publicKey := watoken.GenerateKey()
 	fmt.Println(privateKey)
 	fmt.Println(publicKey)
-	hasil, err := watoken.Encode("bela", privateKey)
+	hasil, err := watoken.Encode("gibel", privateKey)
 	fmt.Println(hasil, err)
 }
 
 func TestHashFunction(t *testing.T) {
-	mconn := SetConnection("MONGOSTRING", "backendgcf")
+	mconn := SetConnection("MONGOSTRING", "gibel")
 	var userdata User
-	userdata.Username = "bela"
-	userdata.Password = "belbel"
+	userdata.Username = "gibel"
+	userdata.Password = "begitulah"
 
 	filter := bson.M{"username": userdata.Username}
 	res := atdb.GetOneDoc[User](mconn, "user", filter)
@@ -49,20 +49,20 @@ func TestHashFunction(t *testing.T) {
 }
 
 func TestIsPasswordValid(t *testing.T) {
-	mconn := SetConnection("MONGOSTRING", "backendgcf")
+	mconn := SetConnection("MONGOSTRING", "gibel")
 	var userdata User
-	userdata.Username = "bela"
-	userdata.Password = "belbel"
+	userdata.Username = "gibel"
+	userdata.Password = "begitulah"
 
 	anu := IsPasswordValid(mconn, "user", userdata)
 	fmt.Println(anu)
 }
 
 func TestInsertUser(t *testing.T) {
-	mconn := SetConnection("MONGOSTRING", "backendgcf")
+	mconn := SetConnection("MONGOSTRING", "gibel")
 	var userdata User
-	userdata.Username = "bela"
-	userdata.Password = "belbel"
+	userdata.Username = "gibel"
+	userdata.Password = "begitulah"
 
 	nama := InsertUser(mconn, "user", userdata)
 	fmt.Println(nama)
